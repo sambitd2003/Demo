@@ -9,10 +9,11 @@ pipeline {
             }
         }
 
-        stage('Building our image') {
+        stage('Build Docker Image') {
             steps {
                 script {
-                    app = docker.build("adminturneddevops/go-webapp-sample")
+                    docker.build("my-app:latest")
+                    // app = docker.build("adminturneddevops/go-webapp-sample")
                 }
             }
         }
